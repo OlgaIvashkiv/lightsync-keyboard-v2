@@ -6,9 +6,6 @@ import { allKeysArray } from "./constants";
 
 import { Wrapper, Keyboard, Row, Key, Input, Button } from "./styled";
 
-const DEFAULT_THEME = allKeysArray.map((button, index) => {
-    return { [`${ button }_${ index }`]: '#ffffff' }
-});
 
 export default function App() {
     const [theme, setTheme] = useState('');
@@ -18,11 +15,6 @@ export default function App() {
     const [color, setColor] = useState('#ffffff');
 
     const presetNameList = useMemo(() => Object.keys(presets), [presets]);
-
-    const onInputColorChange = (e) => {
-        const inputColor = e.target.value;
-        setColor(inputColor);
-    }
 
     const onChangePreset = (e) => {
         const value = e.target.value;
@@ -56,30 +48,28 @@ export default function App() {
                 <>
                     <h3>Select preset</h3>
                     <select value={ activePreset } onChange={ onChangePreset }>
-                        {presetNameList.map((item, index) => (
+                        { presetNameList.map((item, index) => (
                             <option key={ `${ item }_${ index }` }>{ item }</option>
-                        ))}
+                        )) }
                     </select>
                 </>
             )}
             <Keyboard>
                 <Row>
-                    {
-                        allKeysArray.map((item, index) => {
-                                const id = `${ item }_${ index }`
+                    { allKeysArray.map((item, index) => {
+                                const id = `${ item }_${ index }`;
                                 
                                 return <Key key={ `${item}__${index}` }
                                             id={ id }
                                             color={ theme[id] }
                                             onClick={ onChangeTheme }
                                 >{ item }</Key>
-                        })
-                    }
+                        }) }
                 </Row>
             </Keyboard>
 
-            <h3>Change color schema </h3>
-            <input type='color' onChange={ onInputColorChange } value={ color }/>
+            <h3>Choose color</h3>
+            <input type='color' onChange={ (e) => setColor(e.target.value) } value={ color }/>
             <Input
                 type="text"
                 value={ presetName }
