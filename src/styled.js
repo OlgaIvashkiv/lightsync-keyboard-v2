@@ -53,6 +53,31 @@ export const Key = styled.div.attrs(props => ({
     -webkit-box-shadow: 1px 1px 2px 2px rgba(166,166,166,0.75) ;
     -moz-box-shadow: 1px 1px 2px 2px rgba(166,166,166,0.75);
 }
-`
+`;
+
+export const Input = styled.input`
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    padding: 2px 15px 0;
+    border: none;
+    text-transform: uppercase;
+`;
+
+export const Button = styled.button`
+    width: 180px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 2px 15px 0;
+    border: none;
+    text-transform: uppercase;
+    background-color: #fff;
+     &:hover {
+        cursor: pointer;
+        color: #0081ff;
+        transition: color ease-in-out 0.3s;
+}
+`;
 
 
