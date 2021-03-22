@@ -44,10 +44,11 @@ export const Key = styled.div.attrs(props => ({
     transition: box-shadow .3s;
     text-transform: uppercase;
     box-shadow: 0 0 0 1px;
+  
     &:nth-child(69){
-        flex: 1
+        flex: 1;
     }
-    
+  
     &:hover {
     box-shadow: 1px 1px 2px 2px rgba(166,166,166,0.75) ;
     -webkit-box-shadow: 1px 1px 2px 2px rgba(166,166,166,0.75) ;

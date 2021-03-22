@@ -67,6 +67,7 @@ export default function App() {
                     {
                         allKeysArray.map((item, index) => {
                                 const id = `${ item }_${ index }`
+                                
                                 return <Key key={ `${item}__${index}` }
                                             id={ id }
                                             color={ theme[id] }
